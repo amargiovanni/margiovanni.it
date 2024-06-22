@@ -1,0 +1,3 @@
+# Permetti a tutti i crawler di accedere a tutte le altre aree
+User-agent: *
+Allow: /
