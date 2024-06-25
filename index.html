@@ -5,47 +5,44 @@
     <meta name="description" content="Andrea Margiovanni è un Tech & Business Manager presso Oltrematica, specializzato in soluzioni tecnologiche innovative e strategie aziendali. Connettiti con Andrea su LinkedIn e scopri di più sui suoi progetti su Threads e Shots." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrea Margiovanni</title>
-    <script>
-        if(window.location.protocol != 'https:') {
-            location.href =   location.href.replace("http://", "https://");
-        }
-    </script>
     <style>
+        :root {
+            --background-color: white;
+            --text-color: black;
+            --link-color: green;
+            --link-hover-color: darkgreen;
+            --border-color: black;
+            --box-shadow-color: rgba(0,0,0,0.5);
+        }
+
         body {
             padding: 5%;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             font-size: calc(0.7em + 1vw);
             line-height: 1.6;
-            background-color: white; /* Colore di sfondo per il tema chiaro */
-            color: black; /* Colore del testo per il tema chiaro */
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
 
         a {
-            color: green;
+            color: var(--link-color);
+            text-decoration: none;
         }
 
-        a:visited,
+        a:visited {
+            color: var(--link-color);
+        }
+
         a:hover {
-            color: green;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212; /* Colore di sfondo per il tema scuro */
-                color: white; /* Colore del testo per il tema scuro */
-            }
-
-            a, a:visited, a:hover {
-                color: lightgreen; /* Colore dei link per il tema scuro */
-            }
+            color: var(--link-hover-color);
         }
 
         .profile-image {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            border: 2px solid black;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 8px var(--box-shadow-color);
             object-fit: cover;
             display: block;
             margin-left: 0;
@@ -55,11 +52,15 @@
     </style>
 </head>
 <body>
-    <img src="pic.png" alt="Foto profilo di Andrea Margiovanni" class="profile-image" role="img" aria-label="Foto profilo di Andrea Margiovanni">
-    <h1>Andrea Margiovanni</h1>
-    <h3>Born at a very young age.<br>Tech &amp; Business Manager at <a href="https://oltrematica.it/">Oltrematica</a>.</h3>
-    <p>Threads: <a rel="me" title="Segui Andrea Margiovanni sul Fediverso" href="https://www.threads.net/@stramargiogram" aria-label="Andrea Margiovanni sul Fediverso">stramargiogram</a></p>
-    <p>Shots: <a title="Dai un'occhiata a Shots di Andrea Margiovanni su Instagram" href="https://www.instagram.com/stramargiogram/" aria-label="Instagram di Andrea Margiovanni">stramargiogram</a></p>
-    <p>LinkedIn: <a title="Visita il profilo LinkedIn di Andrea Margiovanni" href="https://www.linkedin.com/in/margio/" aria-label="Profilo LinkedIn di Andrea Margiovanni">margio</a></p>
+    <header>
+        <img src="pic.png" alt="Foto profilo di Andrea Margiovanni" class="profile-image" role="img" aria-label="Foto profilo di Andrea Margiovanni">
+        <h1>Andrea Margiovanni</h1>
+        <h3>Born at a very young age.<br>Tech &amp; Business Manager at <a href="https://oltrematica.it/">Oltrematica</a>.</h3>
+    </header>
+    <main>
+        <p>Threads: <a rel="me" title="Segui Andrea Margiovanni sul Fediverso" href="https://www.threads.net/@stramargiogram" aria-label="Andrea Margiovanni sul Fediverso">stramargiogram</a></p>
+        <p>Shots: <a title="Dai un'occhiata a Shots di Andrea Margiovanni su Instagram" href="https://www.instagram.com/stramargiogram/" aria-label="Instagram di Andrea Margiovanni">stramargiogram</a></p>
+        <p>LinkedIn: <a title="Visita il profilo LinkedIn di Andrea Margiovanni" href="https://www.linkedin.com/in/margio/" aria-label="Profilo LinkedIn di Andrea Margiovanni">margio</a></p>
+    </main>
 </body>
 </html>
