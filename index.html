@@ -39,6 +39,10 @@
         @keyframes blink {
             50% { opacity: 0; }
         }
+        .top-output {
+            font-size: 0.9em;
+            white-space: pre;
+        }
     </style>
 </head>
 <body>
@@ -50,6 +54,7 @@
             { command: 'whoami', output: 'Andrea Margiovanni' },
             { command: 'cat about_me.txt', output: 'Born at a very young age. Tech & Business Manager.' },
             { command: 'echo $LINKEDIN', output: '<a href="https://www.linkedin.com/in/margio/" target="_blank">https://www.linkedin.com/in/margio/</a>' },
+            { command: 'top', output: '' },
             { command: '', output: '' }
         ];
 
@@ -60,12 +65,26 @@
             }
         }
 
+        function generateTopOutput() {
+            const header = "Tasks:  3 total,   3 running,   0 sleeping,   0 stopped,   0 zombie\n";
+            const cpuLine = "Cpu(s): 100.0% user,  0.0% system,  0.0% idle\n";
+            const memLine = "Mem:    8192k total,   8192k used,      0k free\n";
+            const columnHeader = "  PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM    TIME+  COMMAND\n";
+            const processes = [
+                "    1 andrea    20   0  4096 1024  512 R  45.0 12.5   0:00.01 Project Managing",
+                "    2 andrea    20   0  4096 1024  512 R  35.0 12.5   0:00.01 Tech Stuffs     ",
+                "    3 andrea    20   0  4096 1024  512 R  20.0 12.5   0:00.01 Family <3       "
+            ];
+
+            return header + cpuLine + memLine + columnHeader + processes.join('\n');
+        }
+
         async function animateConsole() {
             for (let line of lines) {
                 const lineElement = document.createElement('p');
                 consoleElement.appendChild(lineElement);
 
-                lineElement.innerHTML = '<span class="prompt">margio@encelado:~$</span> ';
+                lineElement.innerHTML = '<span class="prompt">user@zsh:~$</span> ';
                 await typeText(lineElement, line.command, 'command');
                 await new Promise(resolve => setTimeout(resolve, 500));
 
@@ -74,6 +93,14 @@
                     consoleElement.appendChild(outputElement);
                     outputElement.innerHTML = `<span class="output">${line.output}</span>`;
                     await new Promise(resolve => setTimeout(resolve, 300));
+                }
+
+                if (line.command === 'top') {
+                    const topOutputElement = document.createElement('pre');
+                    topOutputElement.className = 'output top-output';
+                    consoleElement.appendChild(topOutputElement);
+                    topOutputElement.textContent = generateTopOutput();
+                    await new Promise(resolve => setTimeout(resolve, 1000));
                 }
             }
 
