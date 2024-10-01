@@ -3,115 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Andrea Margiovanni - Tech & Business Manager.">
-    <title>Andrea Margiovanni</title>
+    <title>Andrea Margiovanni - Tech & Business Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
-            background-color: #282a36;
-            color: #f8f8f2;
-            font-family: 'Courier New', monospace;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .console {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .prompt {
-            color: #50fa7b;
-        }
-        .command {
-            color: #ff79c6;
-        }
-        .output {
-            color: #8be9fd;
-        }
-        a {
-            color: #bd93f9;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .cursor {
-            background-color: #f8f8f2;
-            animation: blink 1s step-end infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        .top-output {
-            font-size: 0.9em;
-            white-space: pre;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
-<body>
-    <div class="console" id="console"></div>
-
-    <script>
-        const consoleElement = document.getElementById('console');
-        const lines = [
-            { command: 'whoami', output: 'Andrea Margiovanni' },
-            { command: 'cat about_me.txt', output: 'Born at a very young age. Tech & Business Manager.' },
-            { command: 'echo $LINKEDIN', output: '<a href="https://www.linkedin.com/in/margio/" target="_blank">https://www.linkedin.com/in/margio/</a>' },
-            { command: 'top', output: '' },
-            { command: '', output: '' }
-        ];
-
-        async function typeText(element, text, className) {
-            for (let char of text) {
-                element.innerHTML += `<span class="${className}">${char}</span>`;
-                await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
-            }
-        }
-
-        function generateTopOutput() {
-            const header = "Tasks:  3 total,   3 running,   0 sleeping,   0 stopped,   0 zombie\n";
-            const cpuLine = "Cpu(s): 100.0% user,  0.0% system,  0.0% idle\n";
-            const memLine = "Mem:    8192k total,   8192k used,      0k free\n";
-            const columnHeader = "  PID USER      PR  NI  VIRT  RES  SHR S  %CPU %MEM    TIME+  COMMAND\n";
-            const processes = [
-                "    1 andrea    20   0  4096 1024  512 R  45.0 12.5   0:00.01 Project Managing",
-                "    2 andrea    20   0  4096 1024  512 R  35.0 12.5   0:00.01 Tech Stuffs     ",
-                "    3 andrea    20   0  4096 1024  512 R  20.0 12.5   0:00.01 Family <3       "
-            ];
-
-            return header + cpuLine + memLine + columnHeader + processes.join('\n');
-        }
-
-        async function animateConsole() {
-            for (let line of lines) {
-                const lineElement = document.createElement('p');
-                consoleElement.appendChild(lineElement);
-
-                lineElement.innerHTML = '<span class="prompt">user@zsh:~$</span> ';
-                await typeText(lineElement, line.command, 'command');
-                await new Promise(resolve => setTimeout(resolve, 500));
-
-                if (line.output) {
-                    const outputElement = document.createElement('p');
-                    consoleElement.appendChild(outputElement);
-                    outputElement.innerHTML = `<span class="output">${line.output}</span>`;
-                    await new Promise(resolve => setTimeout(resolve, 300));
-                }
-
-                if (line.command === 'top') {
-                    const topOutputElement = document.createElement('pre');
-                    topOutputElement.className = 'output top-output';
-                    consoleElement.appendChild(topOutputElement);
-                    topOutputElement.textContent = generateTopOutput();
-                    await new Promise(resolve => setTimeout(resolve, 1000));
-                }
-            }
-
-            const cursorElement = document.createElement('span');
-            cursorElement.className = 'cursor';
-            cursorElement.innerHTML = '&nbsp;';
-            consoleElement.lastElementChild.appendChild(cursorElement);
-        }
-
-        animateConsole();
-    </script>
+<body class="bg-white">
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-12">
+            <div class="text-3xl font-bold">AM</div>
+        </header>
+        
+        <main>
+            <h1 class="text-6xl font-bold mb-4">
+                Hi, <span class="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-yellow-300 to-pink-500">Welcome</span>
+            </h1>
+            
+            <p class="text-xl mb-4">
+                I'm Andrea Margiovanni,<br>
+                Tech & Business Manager, daddy & husband.
+            </p>
+            
+            <p class="text-lg text-gray-600 mb-8">
+                Bringing projects to the ground.<br>
+                Bridging the gap between user needs, technological<br>
+                possibilities, and business objectives.
+            </p>
+        </main>
+    </div>
 </body>
 </html>
