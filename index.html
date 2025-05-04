@@ -22,10 +22,10 @@
     <style>
         :root {
             --primary: #3498db;
-            --secondary: #2c3e50;
+            --secondary: #f8f9fa;
             --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #1a1a1a;
+            --light: #ffffff;
+            --dark: #2c3e50;
             --transition: all 0.3s ease;
         }
         
@@ -130,7 +130,7 @@
         }
         
         .nav-link {
-            color: var(--light);
+            color: var(--dark);
             text-decoration: none;
             font-weight: 500;
             font-size: 1.1rem;
@@ -163,7 +163,7 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background-color: var(--secondary);
+            background-color: var(--light);
             background-position: center;
             background-size: cover;
             overflow: hidden;
@@ -183,13 +183,13 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(44, 62, 80, 0.7);
+            background: rgba(255, 255, 255, 0.9);
         }
         
         .header-content {
             position: relative;
             z-index: 2;
-            color: var(--light);
+            color: var(--dark);
             max-width: 800px;
         }
         
@@ -243,7 +243,7 @@
         }
         
         .social-icon {
-            color: var(--light);
+            color: var(--dark);
             font-size: 1.5rem;
             transition: var(--transition);
             position: relative;
@@ -281,7 +281,7 @@
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--light);
+            color: var(--dark);
             font-size: 2rem;
             animation: bounce 2s infinite;
             cursor: pointer;
