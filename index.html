@@ -345,12 +345,7 @@
             left: 0;
             background: linear-gradient(45deg, var(--secondary) 0%, var(--primary) 100%);
             opacity: 0.1;
-            animation: waveEffect 10s ease-in-out infinite;
-        }
-
-        @keyframes waveEffect {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(2deg); }
+            animation: none;
         }
 
         .header-content > * {
@@ -420,15 +415,9 @@
         <div class="load-circle"></div>
     </div>
     
-    <!-- Cursore personalizzato -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    
     <!-- Header -->
     <section id="home" class="header">
-        <div class="overlay"></div>
         <div class="wave-bg"></div>
-        <div id="particles-js"></div>
         <div class="container">
             <div class="header-content">
                 <h5 class="greeting">Hello, I am</h5>
@@ -438,16 +427,10 @@
                     </div>
                 </h1>
                 <p class="description">Head of Product & Technology with a passion for innovation and technology. Always seeking new challenges and opportunities to create value through technology.</p>
-                <div class="social-icons">
-                    <a href="mailto:andrea@margio.uk" class="social-icon" aria-label="Email Me"><i class="fas fa-envelope" aria-hidden="true"></i></a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Font Awesome - Caricato in modo asincrono -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    
     <!-- Script essenziali -->
     <script>
         // Loader più efficiente
@@ -491,9 +474,7 @@
     </script>
     
     <!-- Script non essenziali - caricati in modo differito -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" defer></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>    
     <script defer>
         document.addEventListener('DOMContentLoaded', function() {
             // Caricamento della libreria Typed.js
@@ -511,176 +492,6 @@
                 });
             };
             document.body.appendChild(typedScript);
-            
-            // Caricamento della libreria particles.js
-            const particlesScript = document.createElement('script');
-            particlesScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js';
-            particlesScript.onload = function() {
-                // Inizializza particles.js dopo il caricamento
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": {
-                            "value": 60,  // Ridotto per migliorare le prestazioni
-                            "density": {
-                                "enable": true,
-                                "value_area": 800
-                            }
-                        },
-                        "color": {
-                            "value": "#ffffff"
-                        },
-                        "shape": {
-                            "type": "circle",
-                            "stroke": {
-                                "width": 0,
-                                "color": "#000000"
-                            }
-                        },
-                        "opacity": {
-                            "value": 0.5,
-                            "random": false,
-                            "anim": {
-                                "enable": false,
-                                "speed": 1,
-                                "opacity_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "size": {
-                            "value": 3,
-                            "random": true,
-                            "anim": {
-                                "enable": false,
-                                "speed": 40,
-                                "size_min": 0.1,
-                                "sync": false
-                            }
-                        },
-                        "line_linked": {
-                            "enable": true,
-                            "distance": 150,
-                            "color": "#ffffff",
-                            "opacity": 0.4,
-                            "width": 1
-                        },
-                        "move": {
-                            "enable": true,
-                            "speed": 4,  // Ridotto per migliorare le prestazioni
-                            "direction": "none",
-                            "random": false,
-                            "straight": false,
-                            "out_mode": "out",
-                            "bounce": false,
-                            "attract": {
-                                "enable": false,
-                                "rotateX": 600,
-                                "rotateY": 1200
-                            }
-                        }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "grab"
-                            },
-                            "onclick": {
-                                "enable": true,
-                                "mode": "push"
-                            },
-                            "resize": true
-                        },
-                        "modes": {
-                            "grab": {
-                                "distance": 140,
-                                "line_linked": {
-                                    "opacity": 1
-                                }
-                            },
-                            "push": {
-                                "particles_nb": 2  // Ridotto per migliorare le prestazioni
-                            }
-                        }
-                    },
-                    "retina_detect": false  // Disabilitato per migliorare le prestazioni
-                });
-            };
-            document.body.appendChild(particlesScript);
-
-            // Cursore personalizzato
-            const cursor = document.querySelector('.cursor');
-            const follower = document.querySelector('.cursor-follower');
-            
-            document.addEventListener('mousemove', (e) => {
-                gsap.to(cursor, {
-                    duration: 0.1,
-                    x: e.clientX - 10,
-                    y: e.clientY - 10
-                });
-                
-                gsap.to(follower, {
-                    duration: 0.3,
-                    x: e.clientX - 20,
-                    y: e.clientY - 20
-                });
-            });
-
-            // Effetto scale sul cursore quando si passa sopra elementi interattivi
-            document.querySelectorAll('a, button').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    gsap.to(cursor, {
-                        duration: 0.3,
-                        scale: 1.5
-                    });
-                    gsap.to(follower, {
-                        duration: 0.3,
-                        scale: 2
-                    });
-                });
-                
-                el.addEventListener('mouseleave', () => {
-                    gsap.to(cursor, {
-                        duration: 0.3,
-                        scale: 1
-                    });
-                    gsap.to(follower, {
-                        duration: 0.3,
-                        scale: 1
-                    });
-                });
-            });
-
-            // Effetto particelle 3D
-            gsap.to('.particles-js-canvas-el', {
-                duration: 20,
-                rotationY: 360,
-                repeat: -1,
-                ease: "none"
-            });
-
-
-
-            // Timeline per animazioni coordinate
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".header-content",
-                    start: "top center",
-                    end: "bottom center",
-                    scrub: 1
-                }
-            });
-
-            tl.to(".header-content", {
-                scale: 0.95,
-                opacity: 0.8,
-                duration: 1
-            })
-            .to(".particles-js-canvas-el", {
-                opacity: 0.5,
-                scale: 1.1,
-                duration: 1
-            }, "<");
         });
     </script>
     
@@ -701,37 +512,6 @@
             "https://bsky.app/profile/margio.de"
         ]
     }
-    </script>
-    
-    <!-- Aggiungiamo GSAP per animazioni più fluide -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script defer>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Codice esistente
-            // ... existing code ...
-            
-            // Nuove animazioni con GSAP
-            gsap.to('.wave-bg', {
-                duration: 2,
-                opacity: 0.2,
-                yoyo: true,
-                repeat: -1,
-                ease: "power1.inOut"
-            });
-
-            // Animazione mouse move per effetto parallasse
-            document.addEventListener('mousemove', (e) => {
-                const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-                const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
-                
-                gsap.to('.header-content', {
-                    duration: 1,
-                    x: moveX,
-                    y: moveY,
-                    ease: "power1.out"
-                });
-            });
-        });
     </script>
 </body>
 </html>
