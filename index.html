@@ -3,313 +3,596 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Andrea Margiovanni: Head of Product & Technology, esperto in innovazione e tecnologia con esperienza in gestione di prodotto e leadership tecnica.">
-    <meta name="keywords" content="Andrea Margiovanni, Product Manager, Tech Lead, Innovazione, Tecnologia, Oltrematica">
+    <meta name="description" content="Andrea Margiovanni: Head of Product & Technology. Terminal interattivo per esplorare il mio mondo tech.">
+    <meta name="keywords" content="Andrea Margiovanni, Product Manager, Tech Lead, Terminal, Developer, Innovazione">
     <meta name="author" content="Andrea Margiovanni">
-    <meta property="og:title" content="Andrea Margiovanni - Head of Product & Technology">
-    <meta property="og:description" content="Head of Product & Technology @ Oltrematica con passione per l'innovazione e la tecnologia.">
+    <meta property="og:title" content="margio@zsh ~ % _">
+    <meta property="og:description" content="Terminal interattivo di Andrea Margiovanni - Head of Product & Technology">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Andrea Margiovanni - Head of Product & Technology">
-    <meta name="twitter:description" content="Head of Product & Technology @ Oltrematica con passione per l'innovazione e la tecnologia.">
-    <title>Andrea Margiovanni - Head of Product & Technology</title>
+    <title>margio@zsh ~ % _</title>
     
-    <!-- Preload font con display swap -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stili critici inline -->
     <style>
         :root {
-            --primary: #667eea;
-            --primary-light: #764ba2;
-            --secondary: #f093fb;
-            --accent: #4facfe;
-            --light: #ffffff;
-            --dark: #2d3748;
-            --gray: #718096;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --bg-color: #1e1e2e;
+            --terminal-bg: #11111b;
+            --text-color: #cdd6f4;
+            --prompt-color: #89b4fa;
+            --path-color: #f38ba8;
+            --command-color: #a6e3a1;
+            --output-color: #94e2d5;
+            --cursor-color: #f5e0dc;
+            --border-color: #313244;
+            --selection-bg: #45475a;
+            --green: #a6e3a1;
+            --yellow: #f9e2af;
+            --red: #f38ba8;
+            --purple: #cba6f7;
+            --pink: #f5c2e7;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Outfit', system-ui, -apple-system, sans-serif;
-            color: var(--dark);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow-x: hidden;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-        /* Particelle animate di sfondo */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             overflow: hidden;
-            z-index: 0;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .particle:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { width: 120px; height: 120px; left: 20%; animation-delay: 2s; }
-        .particle:nth-child(3) { width: 60px; height: 60px; left: 70%; animation-delay: 4s; }
-        .particle:nth-child(4) { width: 100px; height: 100px; left: 80%; animation-delay: 1s; }
-        .particle:nth-child(5) { width: 40px; height: 40px; left: 60%; animation-delay: 3s; }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
-            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
-        }
-        
-        /* Header */
-        .header {
-            position: relative;
             height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+        }
+
+        .terminal-container {
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            background-color: var(--terminal-bg);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .header-content {
-            position: relative;
-            z-index: 3;
-            color: var(--light);
-            max-width: 800px;
-            animation: slideInUp 1s ease-out;
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .greeting {
-            font-size: 1.2rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            opacity: 0.9;
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 0.9; }
-        }
-        
-        .name-headline {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.1;
-            background: linear-gradient(45deg, #fff, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-        
-        .typed-text {
-            color: var(--secondary);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .description {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            margin-bottom: 40px;
-            max-width: 600px;
-            opacity: 0.95;
-            font-weight: 300;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-        
-        /* Bottoni social */
-        .social-links {
+
+        .terminal-header {
+            background-color: #181825;
+            padding: 12px 16px;
             display: flex;
-            gap: 20px;
-            margin-top: 30px;
-            animation: slideInUp 1s ease-out 0.6s both;
-        }
-        
-        .social-btn {
-            display: inline-flex;
             align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terminal-buttons {
+            display: flex;
             gap: 8px;
-            padding: 12px 24px;
-            background: rgba(255,255,255,0.1);
-            color: var(--light);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
         }
-        
-        .social-btn:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
         }
-        
-        /* Scroll indicator */
-        .scroll-indicator {
+
+        .terminal-button.close {
+            background-color: #f38ba8;
+        }
+
+        .terminal-button.minimize {
+            background-color: #f9e2af;
+        }
+
+        .terminal-button.maximize {
+            background-color: #a6e3a1;
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: var(--text-color);
+            font-size: 13px;
+            opacity: 0.8;
+        }
+
+        .terminal-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .terminal-line {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .prompt {
+            color: var(--prompt-color);
+            font-weight: 600;
+        }
+
+        .path {
+            color: var(--path-color);
+            margin: 0 8px;
+        }
+
+        .command {
+            color: var(--command-color);
+            margin-left: 8px;
+        }
+
+        .output {
+            color: var(--output-color);
+            white-space: pre-wrap;
+            margin-top: 4px;
+            width: 100%;
+        }
+
+        .input-line {
+            display: flex;
+            align-items: baseline;
+            position: relative;
+        }
+
+        #terminal-input {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            flex: 1;
+            caret-color: transparent;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 18px;
+            background-color: var(--cursor-color);
+            animation: blink 1s infinite;
             position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--light);
-            animation: bounce 2s infinite;
-            opacity: 0.7;
-            z-index: 3;
+            top: 2px;
         }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
+
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
         }
-        
-        /* Responsive */
+
+        .welcome-ascii {
+            color: var(--purple);
+            font-size: 10px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .help-section {
+            margin: 10px 0;
+        }
+
+        .help-title {
+            color: var(--yellow);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .help-command {
+            color: var(--green);
+            display: inline-block;
+            width: 120px;
+        }
+
+        .help-description {
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        a {
+            color: var(--prompt-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ::selection {
+            background-color: var(--selection-bg);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--terminal-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--selection-bg);
+        }
+
         @media (max-width: 768px) {
-            .social-links {
-                flex-direction: column;
-                align-items: flex-start;
+            .terminal-container {
+                width: 100%;
+                height: 100vh;
+                border-radius: 0;
             }
             
-            .social-btn {
-                align-self: flex-start;
-            }
-            
-            .particle {
-                display: none;
+            .terminal-body {
+                font-size: 12px;
+                padding: 15px;
             }
         }
-        
-        /* Hover effects per il testo */
-        .name-headline:hover {
-            transform: scale(1.02);
-            transition: var(--transition);
+
+        .typing {
+            overflow: hidden;
+            border-right: 2px solid var(--cursor-color);
+            white-space: nowrap;
+            animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
         }
-        
-        .description:hover {
-            opacity: 1;
-            transition: var(--transition);
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--cursor-color) }
+        }
+
+        .suggestion {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            background: var(--terminal-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            display: none;
+            z-index: 10;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .suggestion.show {
+            display: block;
+        }
+
+        .suggestion-item {
+            padding: 2px 0;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+
+        .suggestion-item:hover {
+            color: var(--prompt-color);
+        }
+
+        .suggestion-item.active {
+            background: var(--selection-bg);
+            padding: 2px 5px;
+            margin: 0 -5px;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <section id="home" class="header">
-        <!-- Particelle animate -->
-        <div class="particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <div class="terminal-button close"></div>
+                <div class="terminal-button minimize"></div>
+                <div class="terminal-button maximize"></div>
+            </div>
+            <div class="terminal-title">margio@zsh — ~ — 80×24</div>
         </div>
         
-        <div class="container">
-            <div class="header-content">
-                <h5 class="greeting">👋 Hello, I am</h5>
-                <h1 class="name-headline">Andrea Margiovanni
-                    <div>
-                        <span class="typed-text" aria-live="polite"></span>
-                    </div>
-                </h1>
-                <p class="description">Head of Product & Technology with a passion for innovation and technology. Always seeking new challenges and opportunities to create value through technology.</p>
-                
-                <!-- Links social -->
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/margio/" class="social-btn" target="_blank" rel="noopener">
-                        💼 LinkedIn
-                    </a>
-                    <a href="https://bsky.app/profile/margio.de" class="social-btn" target="_blank" rel="noopener">
-                        🦋 Bluesky
-                    </a>
-                    <a href="mailto:hello@margiovanni.it" class="social-btn">
-                        ✉️ Contact
-                    </a>
-                </div>
+        <div class="terminal-body" id="terminal-body">
+            <pre class="welcome-ascii">
+ ███╗   ███╗ █████╗ ██████╗  ██████╗ ██╗ ██████╗ 
+ ████╗ ████║██╔══██╗██╔══██╗██╔════╝ ██║██╔═══██╗
+ ██╔████╔██║███████║██████╔╝██║  ███╗██║██║   ██║
+ ██║╚██╔╝██║██╔══██║██╔══██╗██║   ██║██║██║   ██║
+ ██║ ╚═╝ ██║██║  ██║██║  ██║╚██████╔╝██║╚██████╔╝
+ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚═════╝ 
+            </pre>
+            
+            <div class="terminal-line">
+                <span class="output">Digita <span class="command">help</span> per vedere i comandi disponibili.</span>
+            </div>
+            <br>
+            
+            <div class="terminal-line input-line" id="input-line">
+                <span class="prompt">margio@zsh</span>
+                <span class="path">~</span>
+                <span class="prompt">%</span>
+                <input type="text" id="terminal-input" autofocus>
+                <span class="cursor" id="cursor"></span>
+                <div class="suggestion" id="suggestion"></div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Script non essenziali caricati in modo differito -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script>
-        // Inizializza Typed.js
-        window.addEventListener('load', function() {
-            if (typeof Typed !== 'undefined') {
-                new Typed('.typed-text', {
-                    strings: ["Head of Product", "Head of Tech", "Tech Enthusiast", "Innovator", "Daddy", "Husband"],
-                    typeSpeed: 70,
-                    backSpeed: 50,
-                    backDelay: 1500,
-                    startDelay: 500,
-                    loop: true
-                });
+        const terminalBody = document.getElementById('terminal-body');
+        const terminalInput = document.getElementById('terminal-input');
+        const cursor = document.getElementById('cursor');
+        const suggestion = document.getElementById('suggestion');
+        const inputLine = document.getElementById('input-line');
+        
+        let commandHistory = [];
+        let historyIndex = -1;
+        
+        const commands = {
+            help: () => {
+                return `
+<div class="help-section">
+<div class="help-title">Comandi disponibili:</div>
+<div><span class="help-command">help</span><span class="help-description">Mostra questa guida</span></div>
+<div><span class="help-command">about</span><span class="help-description">Chi sono e cosa faccio</span></div>
+<div><span class="help-command">contact</span><span class="help-description">Come contattarmi</span></div>
+<div><span class="help-command">social</span><span class="help-description">I miei profili social</span></div>
+<div><span class="help-command">clear</span><span class="help-description">Pulisci il terminale</span></div>
+<div><span class="help-command">theme</span><span class="help-description">Cambia tema (dark/light)</span></div>
+<div><span class="help-command">matrix</span><span class="help-description">Easter egg 🎮</span></div>
+</div>`;
+            },
+            
+            about: () => {
+                return `<span style="color: var(--yellow);">👋 Ciao, sono Andrea Margiovanni!</span>
+
+<span style="color: var(--purple);">Head of Product & Technology @ Oltrematica</span>
+
+Appassionato di tecnologia e innovazione, mi occupo di:
+• Guidare team di sviluppo e product management
+• Progettare architetture scalabili e performanti
+• Trasformare idee in prodotti di successo
+• Mentoring e crescita professionale del team
+
+<span style="color: var(--green);">🚀 Always learning, always building!</span>`;
+            },
+            
+            contact: () => {
+                return `<span style="color: var(--yellow);">📬 Contattami</span>
+
+<span style="color: var(--green);">Email:</span> <a href="mailto:hello@margiovanni.it">hello@margiovanni.it</a>
+<span style="color: var(--purple);">LinkedIn:</span> <a href="https://linkedin.com/in/margio" target="_blank">linkedin.com/in/margio</a>
+<span style="color: var(--pink);">Location:</span> Italia 🇮🇹
+
+Sono sempre aperto a nuove opportunità e collaborazioni!`;
+            },
+            
+            social: () => {
+                return `<span style="color: var(--yellow);">🌐 Social Profiles</span>
+
+<span style="color: var(--prompt-color);">💼</span> <a href="https://linkedin.com/in/margio" target="_blank">LinkedIn</a>
+<span style="color: var(--purple);">🦋</span> <a href="https://bsky.app/profile/margio.de" target="_blank">Bluesky</a>
+<span style="color: var(--green);">🐙</span> <a href="https://github.com/margio" target="_blank">GitHub</a>`;
+            },
+            
+            clear: () => {
+                terminalBody.innerHTML = `
+                    <div class="terminal-line input-line" id="input-line">
+                        <span class="prompt">margio@zsh</span>
+                        <span class="path">~</span>
+                        <span class="prompt">%</span>
+                        <input type="text" id="terminal-input" autofocus>
+                        <span class="cursor" id="cursor"></span>
+                        <div class="suggestion" id="suggestion"></div>
+                    </div>
+                `;
+                setupInputHandlers();
+                return null;
+            },
+            
+            theme: () => {
+                document.body.classList.toggle('light-theme');
+                return '<span style="color: var(--green);">✨ Tema cambiato!</span>';
+            },
+            
+            matrix: () => {
+                return `<span style="color: var(--green);">Wake up, Neo...</span>
+<span style="color: var(--green);">The Matrix has you...</span>
+<span style="color: var(--green);">Follow the white rabbit.</span>
+
+<span style="color: var(--green);">🐇 Knock, knock, Neo.</span>`;
+            }
+        };
+        
+        const commandList = Object.keys(commands);
+        
+        function updateCursorPosition() {
+            const inputRect = terminalInput.getBoundingClientRect();
+            const inputLineRect = inputLine.getBoundingClientRect();
+            const textWidth = getTextWidth(terminalInput.value, getComputedStyle(terminalInput).font);
+            cursor.style.left = `${inputRect.left - inputLineRect.left + textWidth}px`;
+        }
+        
+        function getTextWidth(text, font) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            context.font = font;
+            return context.measureText(text).width;
+        }
+        
+        function showSuggestions(input) {
+            if (!input) {
+                suggestion.classList.remove('show');
+                return;
+            }
+            
+            const matches = commandList.filter(cmd => cmd.startsWith(input));
+            if (matches.length > 0) {
+                suggestion.innerHTML = matches.map(cmd => 
+                    `<div class="suggestion-item">${cmd}</div>`
+                ).join('');
+                suggestion.classList.add('show');
+            } else {
+                suggestion.classList.remove('show');
+            }
+        }
+        
+        function executeCommand(input) {
+            const args = input.trim().split(' ');
+            const cmd = args[0].toLowerCase();
+            args.shift();
+            
+            addLine(`<span class="prompt">margio@zsh</span><span class="path">~</span><span class="prompt">%</span><span class="command">${input}</span>`);
+            
+            if (commands[cmd]) {
+                const output = commands[cmd](args);
+                if (output !== null) {
+                    addLine(`<span class="output">${output}</span>`);
+                }
+            } else if (input.trim()) {
+                addLine(`<span style="color: var(--red);">zsh: comando non trovato: ${cmd}</span>`);
+                addLine(`<span style="color: var(--text-color); opacity: 0.6;">Digita 'help' per la lista dei comandi</span>`);
+            }
+            
+            commandHistory.push(input);
+            historyIndex = commandHistory.length;
+        }
+        
+        function addLine(content) {
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.innerHTML = content;
+            terminalBody.insertBefore(line, inputLine);
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+        
+        function setupInputHandlers() {
+            const newInput = document.getElementById('terminal-input');
+            const newCursor = document.getElementById('cursor');
+            const newSuggestion = document.getElementById('suggestion');
+            const newInputLine = document.getElementById('input-line');
+            
+            newInput.addEventListener('input', (e) => {
+                updateCursorPosition();
+                showSuggestions(e.target.value);
+            });
+            
+            newInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    executeCommand(e.target.value);
+                    e.target.value = '';
+                    updateCursorPosition();
+                    suggestion.classList.remove('show');
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (historyIndex > 0) {
+                        historyIndex--;
+                        e.target.value = commandHistory[historyIndex];
+                        updateCursorPosition();
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (historyIndex < commandHistory.length - 1) {
+                        historyIndex++;
+                        e.target.value = commandHistory[historyIndex];
+                    } else {
+                        historyIndex = commandHistory.length;
+                        e.target.value = '';
+                    }
+                    updateCursorPosition();
+                } else if (e.key === 'Tab') {
+                    e.preventDefault();
+                    const matches = commandList.filter(cmd => cmd.startsWith(e.target.value));
+                    if (matches.length === 1) {
+                        e.target.value = matches[0];
+                        updateCursorPosition();
+                        suggestion.classList.remove('show');
+                    }
+                }
+            });
+            
+            newInput.focus();
+            
+            // Update references
+            terminalInput = newInput;
+            cursor = newCursor;
+            suggestion = newSuggestion;
+            inputLine = newInputLine;
+        }
+        
+        // Event listeners
+        terminalInput.addEventListener('input', (e) => {
+            updateCursorPosition();
+            showSuggestions(e.target.value);
+        });
+        
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                executeCommand(e.target.value);
+                e.target.value = '';
+                updateCursorPosition();
+                suggestion.classList.remove('show');
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (historyIndex > 0) {
+                    historyIndex--;
+                    e.target.value = commandHistory[historyIndex];
+                    updateCursorPosition();
+                }
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (historyIndex < commandHistory.length - 1) {
+                    historyIndex++;
+                    e.target.value = commandHistory[historyIndex];
+                } else {
+                    historyIndex = commandHistory.length;
+                    e.target.value = '';
+                }
+                updateCursorPosition();
+            } else if (e.key === 'Tab') {
+                e.preventDefault();
+                const matches = commandList.filter(cmd => cmd.startsWith(e.target.value));
+                if (matches.length === 1) {
+                    e.target.value = matches[0];
+                    updateCursorPosition();
+                    suggestion.classList.remove('show');
+                }
             }
         });
         
-        // Parallax effect leggero per le particelle
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const particles = document.querySelectorAll('.particle');
-            particles.forEach((particle, index) => {
-                const speed = (index + 1) * 0.5;
-                particle.style.transform = `translateY(${scrolled * speed}px)`;
-            });
+        // Focus input on terminal click
+        terminalBody.addEventListener('click', () => {
+            terminalInput.focus();
         });
-    </script>
-    
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Andrea Margiovanni",
-        "jobTitle": "Head of Product & Technology",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "Oltrematica"
-        },
-        "url": "https://margiovanni.it",
-        "sameAs": [
-            "https://www.linkedin.com/in/margio/",
-            "https://bsky.app/profile/margio.de"
-        ]
-    }
+        
+        // Initial cursor position
+        updateCursorPosition();
+        terminalInput.focus();
+        
+        // Suggestion click handler
+        suggestion.addEventListener('click', (e) => {
+            if (e.target.classList.contains('suggestion-item')) {
+                terminalInput.value = e.target.textContent;
+                updateCursorPosition();
+                suggestion.classList.remove('show');
+                terminalInput.focus();
+            }
+        });
     </script>
 </body>
 </html>
