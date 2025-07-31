@@ -3,35 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Andrea Margiovanni: Head of Product & Technology. Terminal interattivo per esplorare il mio mondo tech.">
-    <meta name="keywords" content="Andrea Margiovanni, Product Manager, Tech Lead, Terminal, Developer, Innovazione">
+    <meta name="description" content="Andrea Margiovanni - Head of Product & Technology">
+    <meta name="keywords" content="Andrea Margiovanni, Product Manager, Tech Lead, Technology, Innovation">
     <meta name="author" content="Andrea Margiovanni">
-    <meta property="og:title" content="margio@zsh ~ % _">
-    <meta property="og:description" content="Terminal interattivo di Andrea Margiovanni - Head of Product & Technology">
+    <meta property="og:title" content="Andrea Margiovanni">
+    <meta property="og:description" content="Head of Product & Technology - Building the future, one product at a time">
     <meta property="og:type" content="website">
-    <title>margio@zsh ~ % _</title>
+    <meta property="og:image" content="https://raw.githubusercontent.com/Oltrematica/public-assets/refs/heads/main/signatures/pics/a.margio.png">
+    <title>Andrea Margiovanni</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #1e1e2e;
-            --terminal-bg: #11111b;
-            --text-color: #cdd6f4;
-            --prompt-color: #89b4fa;
-            --path-color: #f38ba8;
-            --command-color: #a6e3a1;
-            --output-color: #94e2d5;
-            --cursor-color: #f5e0dc;
-            --border-color: #313244;
-            --selection-bg: #45475a;
-            --green: #a6e3a1;
-            --yellow: #f9e2af;
-            --red: #f38ba8;
-            --purple: #cba6f7;
-            --pink: #f5c2e7;
+            --text-primary: #111111;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --accent: #0066ff;
+            --accent-hover: #0052cc;
+            --border-light: #e5e5e5;
+            --max-width: 680px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+            --spacing-2xl: 6rem;
         }
 
         * {
@@ -41,558 +42,245 @@
         }
 
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow: hidden;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
-        .terminal-container {
-            width: 90%;
-            max-width: 1000px;
-            height: 80vh;
-            background-color: var(--terminal-bg);
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--border-color);
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-md);
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
-        .terminal-header {
-            background-color: #181825;
-            padding: 12px 16px;
+        header {
+            padding: var(--spacing-2xl) 0 var(--spacing-xl);
+            text-align: center;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            filter: grayscale(0%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 540px;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.01em;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .link-item {
             display: flex;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .terminal-buttons {
-            display: flex;
-            gap: 8px;
-        }
-
-        .terminal-button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .terminal-button.close {
-            background-color: #f38ba8;
-        }
-
-        .terminal-button.minimize {
-            background-color: #f9e2af;
-        }
-
-        .terminal-button.maximize {
-            background-color: #a6e3a1;
-        }
-
-        .terminal-title {
-            flex: 1;
-            text-align: center;
-            color: var(--text-color);
-            font-size: 13px;
-            opacity: 0.8;
-        }
-
-        .terminal-body {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .terminal-line {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: baseline;
-            flex-wrap: wrap;
-        }
-
-        .prompt {
-            color: var(--prompt-color);
-            font-weight: 600;
-        }
-
-        .path {
-            color: var(--path-color);
-            margin: 0 8px;
-        }
-
-        .command {
-            color: var(--command-color);
-            margin-left: 8px;
-        }
-
-        .output {
-            color: var(--output-color);
-            white-space: pre-wrap;
-            margin-top: 4px;
-            width: 100%;
-        }
-
-        .input-line {
-            display: flex;
-            align-items: baseline;
-            position: relative;
-        }
-
-        #terminal-input {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-family: inherit;
-            font-size: inherit;
-            outline: none;
-            flex: 1;
-            caret-color: transparent;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 18px;
-            background-color: var(--cursor-color);
-            animation: blink 1s infinite;
-            position: absolute;
-            top: 2px;
-        }
-
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-
-        .welcome-ascii {
-            color: var(--purple);
-            font-size: 10px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .help-section {
-            margin: 10px 0;
-        }
-
-        .help-title {
-            color: var(--yellow);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .help-command {
-            color: var(--green);
-            display: inline-block;
-            width: 120px;
-        }
-
-        .help-description {
-            color: var(--text-color);
-            opacity: 0.8;
-        }
-
-        a {
-            color: var(--prompt-color);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: 12px;
             text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .link-item:hover {
+            background: var(--bg-primary);
+            border-color: var(--border-light);
+            transform: translateY(-2px);
         }
 
-        ::selection {
-            background-color: var(--selection-bg);
+        .link-title {
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .link-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--terminal-bg);
+        .contact-links {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: var(--spacing-lg);
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 4px;
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid var(--border-light);
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--selection-bg);
+        .contact-link:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
         }
 
-        @media (max-width: 768px) {
-            .terminal-container {
-                width: 100%;
-                height: 100vh;
-                border-radius: 0;
+        footer {
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-light);
+            margin-top: var(--spacing-2xl);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 16px;
             }
-            
-            .terminal-body {
-                font-size: 12px;
-                padding: 15px;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            .container {
+                padding: var(--spacing-sm);
+            }
+
+            header {
+                padding: var(--spacing-xl) 0 var(--spacing-lg);
             }
         }
 
-        .typing {
-            overflow: hidden;
-            border-right: 2px solid var(--cursor-color);
-            white-space: nowrap;
-            animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #ffffff;
+                --text-secondary: #a0a0a0;
+                --text-muted: #666666;
+                --bg-primary: #000000;
+                --bg-secondary: #111111;
+                --accent: #3b82f6;
+                --accent-hover: #2563eb;
+                --border-light: #222222;
+            }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
+            .profile-pic {
+                filter: grayscale(100%) brightness(0.9);
+            }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--cursor-color) }
-        }
-
-        .suggestion {
-            position: absolute;
-            bottom: 100%;
-            left: 0;
-            background: var(--terminal-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            padding: 5px 10px;
-            margin-bottom: 5px;
-            display: none;
-            z-index: 10;
-            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .suggestion.show {
-            display: block;
-        }
-
-        .suggestion-item {
-            padding: 2px 0;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-
-        .suggestion-item:hover {
-            color: var(--prompt-color);
-        }
-
-        .suggestion-item.active {
-            background: var(--selection-bg);
-            padding: 2px 5px;
-            margin: 0 -5px;
+            .profile-pic:hover {
+                filter: grayscale(0%) brightness(1);
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="terminal-container">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <div class="terminal-button close"></div>
-                <div class="terminal-button minimize"></div>
-                <div class="terminal-button maximize"></div>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="https://raw.githubusercontent.com/Oltrematica/public-assets/refs/heads/main/signatures/pics/a.margio.png" 
+                     alt="Andrea Margiovanni" 
+                     class="profile-pic">
+                <div>
+                    <h1>Andrea Margiovanni</h1>
+                    <p class="tagline">Head of Product & Technology</p>
+                    <p class="bio">
+                        Trasformo idee in prodotti digitali che fanno la differenza. 
+                        Con diversi anni di esperienza, guido team di sviluppo e 
+                        product management per creare soluzioni innovative e scalabili.
+                    </p>
+                </div>
             </div>
-            <div class="terminal-title">margio@zsh — ~ — 80×24</div>
-        </div>
-        
-        <div class="terminal-body" id="terminal-body">
-            <pre class="welcome-ascii">
- ███╗   ███╗ █████╗ ██████╗  ██████╗ ██╗ ██████╗ 
- ████╗ ████║██╔══██╗██╔══██╗██╔════╝ ██║██╔═══██╗
- ██╔████╔██║███████║██████╔╝██║  ███╗██║██║   ██║
- ██║╚██╔╝██║██╔══██║██╔══██╗██║   ██║██║██║   ██║
- ██║ ╚═╝ ██║██║  ██║██║  ██║╚██████╔╝██║╚██████╔╝
- ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚═════╝ 
-            </pre>
-            
-            <div class="terminal-line">
-                <span class="output">Digita <span class="command">help</span> per vedere i comandi disponibili.</span>
+        </header>
+
+        <main>
+
+            <div class="contact-links">
+                <a href="mailto:hello@margiovanni.it" class="contact-link">
+                    <span>✉️</span> Email
+                </a>
+                <a href="https://linkedin.com/in/margio" target="_blank" rel="noopener" class="contact-link">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/margio" target="_blank" rel="noopener" class="contact-link">
+                    <span>🐙</span> GitHub
+                </a>
+                <a href="https://bsky.app/profile/margio.de" target="_blank" rel="noopener" class="contact-link">
+                    <span>🦋</span> Bluesky
+                </a>
             </div>
-            <br>
-            
-            <div class="terminal-line input-line" id="input-line">
-                <span class="prompt">margio@zsh</span>
-                <span class="path">~</span>
-                <span class="prompt">%</span>
-                <input type="text" id="terminal-input" autofocus>
-                <span class="cursor" id="cursor"></span>
-                <div class="suggestion" id="suggestion"></div>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script>
-        const terminalBody = document.getElementById('terminal-body');
-        const terminalInput = document.getElementById('terminal-input');
-        const cursor = document.getElementById('cursor');
-        const suggestion = document.getElementById('suggestion');
-        const inputLine = document.getElementById('input-line');
-        
-        let commandHistory = [];
-        let historyIndex = -1;
-        
-        const commands = {
-            help: () => {
-                return `
-<div class="help-section">
-<div class="help-title">Comandi disponibili:</div>
-<div><span class="help-command">help</span><span class="help-description">Mostra questa guida</span></div>
-<div><span class="help-command">about</span><span class="help-description">Chi sono e cosa faccio</span></div>
-<div><span class="help-command">contact</span><span class="help-description">Come contattarmi</span></div>
-<div><span class="help-command">social</span><span class="help-description">I miei profili social</span></div>
-<div><span class="help-command">clear</span><span class="help-description">Pulisci il terminale</span></div>
-<div><span class="help-command">theme</span><span class="help-description">Cambia tema (dark/light)</span></div>
-<div><span class="help-command">matrix</span><span class="help-description">Easter egg 🎮</span></div>
-</div>`;
-            },
-            
-            about: () => {
-                return `<span style="color: var(--yellow);">👋 Ciao, sono Andrea Margiovanni!</span>
-
-<span style="color: var(--purple);">Head of Product & Technology @ Oltrematica</span>
-
-Appassionato di tecnologia e innovazione, mi occupo di:
-• Guidare team di sviluppo e product management
-• Progettare architetture scalabili e performanti
-• Trasformare idee in prodotti di successo
-• Mentoring e crescita professionale del team
-
-<span style="color: var(--green);">🚀 Always learning, always building!</span>`;
-            },
-            
-            contact: () => {
-                return `<span style="color: var(--yellow);">📬 Contattami</span>
-
-<span style="color: var(--green);">Email:</span> <a href="mailto:hello@margiovanni.it">hello@margiovanni.it</a>
-<span style="color: var(--purple);">LinkedIn:</span> <a href="https://linkedin.com/in/margio" target="_blank">linkedin.com/in/margio</a>
-<span style="color: var(--pink);">Location:</span> Italia 🇮🇹
-
-Sono sempre aperto a nuove opportunità e collaborazioni!`;
-            },
-            
-            social: () => {
-                return `<span style="color: var(--yellow);">🌐 Social Profiles</span>
-
-<span style="color: var(--prompt-color);">💼</span> <a href="https://linkedin.com/in/margio" target="_blank">LinkedIn</a>
-<span style="color: var(--purple);">🦋</span> <a href="https://bsky.app/profile/margio.de" target="_blank">Bluesky</a>
-<span style="color: var(--green);">🐙</span> <a href="https://github.com/margio" target="_blank">GitHub</a>`;
-            },
-            
-            clear: () => {
-                terminalBody.innerHTML = `
-                    <div class="terminal-line input-line" id="input-line">
-                        <span class="prompt">margio@zsh</span>
-                        <span class="path">~</span>
-                        <span class="prompt">%</span>
-                        <input type="text" id="terminal-input" autofocus>
-                        <span class="cursor" id="cursor"></span>
-                        <div class="suggestion" id="suggestion"></div>
-                    </div>
-                `;
-                setupInputHandlers();
-                return null;
-            },
-            
-            theme: () => {
-                document.body.classList.toggle('light-theme');
-                return '<span style="color: var(--green);">✨ Tema cambiato!</span>';
-            },
-            
-            matrix: () => {
-                return `<span style="color: var(--green);">Wake up, Neo...</span>
-<span style="color: var(--green);">The Matrix has you...</span>
-<span style="color: var(--green);">Follow the white rabbit.</span>
-
-<span style="color: var(--green);">🐇 Knock, knock, Neo.</span>`;
-            }
-        };
-        
-        const commandList = Object.keys(commands);
-        
-        function updateCursorPosition() {
-            const inputRect = terminalInput.getBoundingClientRect();
-            const inputLineRect = inputLine.getBoundingClientRect();
-            const textWidth = getTextWidth(terminalInput.value, getComputedStyle(terminalInput).font);
-            cursor.style.left = `${inputRect.left - inputLineRect.left + textWidth}px`;
-        }
-        
-        function getTextWidth(text, font) {
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            context.font = font;
-            return context.measureText(text).width;
-        }
-        
-        function showSuggestions(input) {
-            if (!input) {
-                suggestion.classList.remove('show');
-                return;
-            }
-            
-            const matches = commandList.filter(cmd => cmd.startsWith(input));
-            if (matches.length > 0) {
-                suggestion.innerHTML = matches.map(cmd => 
-                    `<div class="suggestion-item">${cmd}</div>`
-                ).join('');
-                suggestion.classList.add('show');
-            } else {
-                suggestion.classList.remove('show');
-            }
-        }
-        
-        function executeCommand(input) {
-            const args = input.trim().split(' ');
-            const cmd = args[0].toLowerCase();
-            args.shift();
-            
-            addLine(`<span class="prompt">margio@zsh</span><span class="path">~</span><span class="prompt">%</span><span class="command">${input}</span>`);
-            
-            if (commands[cmd]) {
-                const output = commands[cmd](args);
-                if (output !== null) {
-                    addLine(`<span class="output">${output}</span>`);
-                }
-            } else if (input.trim()) {
-                addLine(`<span style="color: var(--red);">zsh: comando non trovato: ${cmd}</span>`);
-                addLine(`<span style="color: var(--text-color); opacity: 0.6;">Digita 'help' per la lista dei comandi</span>`);
-            }
-            
-            commandHistory.push(input);
-            historyIndex = commandHistory.length;
-        }
-        
-        function addLine(content) {
-            const line = document.createElement('div');
-            line.className = 'terminal-line';
-            line.innerHTML = content;
-            terminalBody.insertBefore(line, inputLine);
-            terminalBody.scrollTop = terminalBody.scrollHeight;
-        }
-        
-        function setupInputHandlers() {
-            const newInput = document.getElementById('terminal-input');
-            const newCursor = document.getElementById('cursor');
-            const newSuggestion = document.getElementById('suggestion');
-            const newInputLine = document.getElementById('input-line');
-            
-            newInput.addEventListener('input', (e) => {
-                updateCursorPosition();
-                showSuggestions(e.target.value);
-            });
-            
-            newInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    executeCommand(e.target.value);
-                    e.target.value = '';
-                    updateCursorPosition();
-                    suggestion.classList.remove('show');
-                } else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    if (historyIndex > 0) {
-                        historyIndex--;
-                        e.target.value = commandHistory[historyIndex];
-                        updateCursorPosition();
-                    }
-                } else if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    if (historyIndex < commandHistory.length - 1) {
-                        historyIndex++;
-                        e.target.value = commandHistory[historyIndex];
-                    } else {
-                        historyIndex = commandHistory.length;
-                        e.target.value = '';
-                    }
-                    updateCursorPosition();
-                } else if (e.key === 'Tab') {
-                    e.preventDefault();
-                    const matches = commandList.filter(cmd => cmd.startsWith(e.target.value));
-                    if (matches.length === 1) {
-                        e.target.value = matches[0];
-                        updateCursorPosition();
-                        suggestion.classList.remove('show');
-                    }
-                }
-            });
-            
-            newInput.focus();
-            
-            // Update references
-            terminalInput = newInput;
-            cursor = newCursor;
-            suggestion = newSuggestion;
-            inputLine = newInputLine;
-        }
-        
-        // Event listeners
-        terminalInput.addEventListener('input', (e) => {
-            updateCursorPosition();
-            showSuggestions(e.target.value);
-        });
-        
-        terminalInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                executeCommand(e.target.value);
-                e.target.value = '';
-                updateCursorPosition();
-                suggestion.classList.remove('show');
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                if (historyIndex > 0) {
-                    historyIndex--;
-                    e.target.value = commandHistory[historyIndex];
-                    updateCursorPosition();
-                }
-            } else if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                if (historyIndex < commandHistory.length - 1) {
-                    historyIndex++;
-                    e.target.value = commandHistory[historyIndex];
-                } else {
-                    historyIndex = commandHistory.length;
-                    e.target.value = '';
-                }
-                updateCursorPosition();
-            } else if (e.key === 'Tab') {
-                e.preventDefault();
-                const matches = commandList.filter(cmd => cmd.startsWith(e.target.value));
-                if (matches.length === 1) {
-                    e.target.value = matches[0];
-                    updateCursorPosition();
-                    suggestion.classList.remove('show');
-                }
-            }
-        });
-        
-        // Focus input on terminal click
-        terminalBody.addEventListener('click', () => {
-            terminalInput.focus();
-        });
-        
-        // Initial cursor position
-        updateCursorPosition();
-        terminalInput.focus();
-        
-        // Suggestion click handler
-        suggestion.addEventListener('click', (e) => {
-            if (e.target.classList.contains('suggestion-item')) {
-                terminalInput.value = e.target.textContent;
-                updateCursorPosition();
-                suggestion.classList.remove('show');
-                terminalInput.focus();
-            }
-        });
-    </script>
 </body>
 </html>
