@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(open http://localhost:8000)"
+      "Bash(open http://localhost:8000)",
+      "Bash(open index.html)"
     ],
     "deny": []
   }
