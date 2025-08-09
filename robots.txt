@@ -1,3 +1,0 @@
-# robots.txt per margiovanni.com
-User-agent: *
-Allow: /
