@@ -46,7 +46,7 @@ function initScrollAnimations() {
 
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '50px 0px -50px 0px'
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -62,6 +62,13 @@ function initScrollAnimations() {
   // Observe all elements with animate-on-scroll class
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
+
+    // Immediately animate elements that are already in viewport on page load
+    const rect = el.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
+    if (isInViewport) {
+      el.classList.add('animate-in');
+    }
   });
 }
 
