@@ -36,6 +36,10 @@ defaults:
     values:
       layout: "default"
 
+# Include in processing
+include:
+  - _headers
+
 # Exclude from processing
 exclude:
   - Gemfile
