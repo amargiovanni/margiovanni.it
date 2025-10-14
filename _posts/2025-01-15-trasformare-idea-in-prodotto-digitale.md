@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Come trasformare un'idea in un prodotto digitale di successo"
+subtitle: "Quando mi trovo davanti a una lavagna bianca e qualcuno mi racconta della sua idea rivoluzionaria, vedo sempre la stessa scintilla negli occhi"
 date: 2025-01-15
 categories: product-management startup
 ---
