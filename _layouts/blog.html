@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<section class="blog-section">
+    <div class="blog-container">
+        <div class="blog-header animate-on-scroll">
+            <h1 class="section-title">Blog</h1>
+            <p class="blog-description">
+                Thoughts on product design, technology, and building digital experiences.
+            </p>
+        </div>
+
+        <div class="blog-posts">
+            {% for post in site.posts %}
+            <article class="blog-post-card animate-on-scroll">
+                <div class="post-card-content">
+                    <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                    <h2 class="post-card-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h2>
+                    {% if post.excerpt %}
+                    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    {% endif %}
+                    <div class="post-card-footer">
+                        {% if post.categories %}
+                        <div class="post-categories">
+                            {% for category in post.categories %}
+                            <span class="post-category">{{ category }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <a href="{{ post.url | relative_url }}" class="read-more">
+                            Read more →
+                        </a>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

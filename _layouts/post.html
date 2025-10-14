@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<article class="post">
+    <div class="post-container">
+        <header class="post-header animate-on-scroll">
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.categories %}
+                <div class="post-categories">
+                    {% for category in page.categories %}
+                    <span class="post-category">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.subtitle %}
+            <p class="post-subtitle">{{ page.subtitle }}</p>
+            {% endif %}
+        </header>
+
+        <div class="post-content animate-on-scroll">
+            {{ content }}
+        </div>
+
+        <footer class="post-footer animate-on-scroll">
+            <div class="post-author">
+                <div class="author-info">
+                    <p class="author-name">{{ site.author.name }}</p>
+                    <p class="author-bio">{{ site.description }}</p>
+                </div>
+            </div>
+
+            <div class="post-navigation">
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url | relative_url }}" class="nav-post nav-prev">
+                    <span class="nav-label">← Previous</span>
+                    <span class="nav-title">{{ page.previous.title }}</span>
+                </a>
+                {% endif %}
+                {% if page.next.url %}
+                <a href="{{ page.next.url | relative_url }}" class="nav-post nav-next">
+                    <span class="nav-label">Next →</span>
+                    <span class="nav-title">{{ page.next.title }}</span>
+                </a>
+                {% endif %}
+            </div>
+
+            <div class="back-to-blog">
+                <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">
+                    ← Back to Blog
+                </a>
+            </div>
+        </footer>
+    </div>
+</article>

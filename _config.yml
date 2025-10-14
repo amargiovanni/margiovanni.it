@@ -1,0 +1,51 @@
+# Site settings
+title: Andrea Margiovanni
+email: hello@margiovanni.it
+description: >-
+  Head Of Product & Technology @ Oltrematica.
+  Turning ideas into digital products that make a difference.
+baseurl: ""
+url: "https://margiovanni.it"
+
+# Author information
+author:
+  name: Andrea Margiovanni
+  email: hello@margiovanni.it
+  linkedin: https://www.linkedin.com/in/margio/
+  bluesky: https://bsky.app/profile/margio.uk
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .DS_Store
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
