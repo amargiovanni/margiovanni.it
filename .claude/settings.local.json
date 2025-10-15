@@ -8,7 +8,11 @@
       "Bash(bundle install)",
       "Bash(bundle exec jekyll serve:*)",
       "Bash(test:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(bundle exec jekyll:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(md5:*)"
     ],
     "deny": []
   }
