@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Horizontal Profile Revolution: Navigating Uncertainty in a Tech World that Rewards Versatility"
-date: 2025-05-21
+date: 2025-10-14
 categories: team-culture motivation creativity innovation
 ---
 
