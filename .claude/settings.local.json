@@ -12,7 +12,8 @@
       "Bash(bundle exec jekyll:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(md5:*)"
+      "Bash(md5:*)",
+      "Bash(git rm:*)"
     ],
     "deny": []
   }
