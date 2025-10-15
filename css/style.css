@@ -1006,7 +1006,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
-  font-family: 'Courier New', monospace;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', 'Courier New', monospace;
   font-size: 0.9em;
   color: var(--color-cyan);
 }
@@ -1018,12 +1018,67 @@ body {
   overflow-x: auto;
   margin: var(--spacing-xl) 0;
   border: 1px solid var(--border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 
 .post-content pre code {
   background: none;
   padding: 0;
-  color: var(--text-secondary);
+  color: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Syntax highlighting wrapper */
+.highlight {
+  margin: var(--spacing-xl) 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-base);
+}
+
+.highlight:hover {
+  box-shadow: 0 12px 40px rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.highlight pre {
+  margin: 0;
+  padding: var(--spacing-lg);
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Light mode adjustments for code blocks */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .post-content pre,
+  :root:not([data-theme="dark"]) .highlight {
+    background: rgba(246, 248, 250, 1);
+    border-color: rgba(208, 215, 222, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  :root:not([data-theme="dark"]) .post-content code {
+    background: rgba(175, 184, 193, 0.2);
+    color: #0550ae;
+  }
+}
+
+:root[data-theme="light"] .post-content pre,
+:root[data-theme="light"] .highlight {
+  background: rgba(246, 248, 250, 1);
+  border-color: rgba(208, 215, 222, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="light"] .post-content code {
+  background: rgba(175, 184, 193, 0.2);
+  color: #0550ae;
 }
 
 .post-footer {

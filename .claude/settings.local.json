@@ -19,7 +19,8 @@
       "Bash(echo:*)",
       "Bash(done)",
       "Bash(git mv:*)",
-      "Bash(open http://localhost:4000)"
+      "Bash(open http://localhost:4000)",
+      "Bash(rougify help:*)"
     ],
     "deny": []
   }
