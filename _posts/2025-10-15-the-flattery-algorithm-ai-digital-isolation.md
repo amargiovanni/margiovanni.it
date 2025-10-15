@@ -2,7 +2,7 @@
 layout: post
 title: "The Flattery Algorithm: How AI is Transforming Users into Digital Islands"
 subtitle: "From Social Media Echoes to AI Resonance Chambers - The New Era of Cognitive Isolation"
-date: 2025-01-15
+date: 2025-10-15
 categories: ai ethics technology
 ---
 

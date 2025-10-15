@@ -2,7 +2,7 @@
 layout: post
 title: "How to Turn an Idea into a Successful Digital Product"
 subtitle: "When I find myself in front of a whiteboard and someone tells me about their revolutionary idea, I always see the same spark in their eyes"
-date: 2025-10-15
+date: 2025-01-15
 categories: product-management startup
 ---
 
