@@ -1,0 +1,11 @@
+# robots.txt for margiovanni.it
+
+User-agent: *
+Allow: /
+
+# Disallow Jekyll system directories
+Disallow: /_site/
+Disallow: /.jekyll-cache/
+
+# Sitemap location
+Sitemap: https://margiovanni.it/sitemap.xml

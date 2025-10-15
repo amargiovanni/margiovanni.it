@@ -39,6 +39,7 @@ defaults:
 # Include in processing
 include:
   - _headers
+  - robots.txt
 
 # Exclude from processing
 exclude:
@@ -58,3 +59,4 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-sitemap
