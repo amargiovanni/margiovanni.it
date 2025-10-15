@@ -5,18 +5,16 @@ layout: default
 <article class="post">
     <div class="post-container">
         <header class="post-header animate-on-scroll">
-            <div class="post-meta">
-                <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
-                    {{ page.date | date: "%B %d, %Y" }}
-                </time>
-                {% if page.categories %}
-                <div class="post-categories">
-                    {% for category in page.categories %}
-                    <span class="post-category">{{ category }}</span>
-                    {% endfor %}
-                </div>
-                {% endif %}
+            <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+            {% if page.categories %}
+            <div class="post-categories">
+                {% for category in page.categories %}
+                <span class="post-category">{{ category }}</span>
+                {% endfor %}
             </div>
+            {% endif %}
             <h1 class="post-title">{{ page.title }}</h1>
             {% if page.subtitle %}
             <p class="post-subtitle">{{ page.subtitle }}</p>
