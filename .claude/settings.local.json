@@ -1,33 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3:*)",
-      "Bash(open http://localhost:8000)",
-      "Bash(open index.html)",
-      "Bash(git push:*)",
-      "Bash(bundle install)",
-      "Bash(bundle exec jekyll serve:*)",
-      "Bash(test:*)",
-      "Bash(cat:*)",
-      "Bash(bundle exec jekyll:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(md5:*)",
-      "Bash(git rm:*)",
-      "Bash(while read f)",
-      "Bash(do head -n 5 \"$f\")",
-      "Bash(echo:*)",
-      "Bash(done)",
-      "Bash(git mv:*)",
-      "Bash(open http://localhost:4000)",
-      "Bash(rougify help:*)",
-      "Bash(for file in /Users/andreamargiovanni/dev/margiovanni.it/_posts/*.md)",
-      "Bash(head:*)",
-      "Bash(for file in *.md)",
-      "Bash(do if ! grep -q \"^subtitle:\" \"$file\")",
-      "Bash(then echo \"$file\")",
-      "Bash(fi)"
+      "Bash(curl -o /Users/andreamargiovanni/dev/margiovanni.it/js/simple-jekyll-search.min.js https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js)"
     ],
-    "deny": []
+    "deny": [],
+    "ask": []
   }
 }
