@@ -18,7 +18,8 @@
       "Bash(do head -n 5 \"$f\")",
       "Bash(echo:*)",
       "Bash(done)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(open http://localhost:4000)"
     ],
     "deny": []
   }

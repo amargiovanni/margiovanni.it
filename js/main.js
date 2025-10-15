@@ -4,12 +4,33 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initLoadingScreen();
   initScrollAnimations();
   initSmoothScroll();
   initNavigation();
   initAnimatedBackground();
 });
+
+// =======================
+// Theme Management (Auto-detect only)
+// =======================
+
+function initTheme() {
+  // Detect system preference
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Apply theme based on system preference
+  const theme = systemPrefersDark ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // Listen for system theme changes and update automatically
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', (e) => {
+    const newTheme = e.matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', newTheme);
+  });
+}
 
 // =======================
 // Loading Screen
