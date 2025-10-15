@@ -4,7 +4,7 @@ layout: default
 
 <section class="blog-section">
     <div class="blog-container">
-        <div class="blog-header animate-on-scroll">
+        <div class="blog-header">
             <h1 class="section-title">Blog</h1>
             <p class="blog-description">
                 Thoughts on product design, technology, and building digital experiences.
@@ -13,7 +13,7 @@ layout: default
 
         <div class="blog-posts">
             {% for post in paginator.posts %}
-            <article class="blog-post-card animate-on-scroll">
+            <article class="blog-post-card">
                 <div class="post-card-content">
                     <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
                         {{ post.date | date: "%B %d, %Y" }}
@@ -43,7 +43,7 @@ layout: default
 
         <!-- Pagination -->
         {% if paginator.total_pages > 1 %}
-        <div class="pagination animate-on-scroll">
+        <div class="pagination">
             {% if paginator.previous_page %}
             <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link pagination-prev">
                 ← Previous

@@ -4,7 +4,7 @@ layout: default
 
 <article class="post">
     <div class="post-container">
-        <header class="post-header animate-on-scroll">
+        <header class="post-header">
             <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
                 {{ page.date | date: "%B %d, %Y" }}
             </time>
@@ -21,11 +21,11 @@ layout: default
             {% endif %}
         </header>
 
-        <div class="post-content animate-on-scroll">
+        <div class="post-content">
             {{ content }}
         </div>
 
-        <footer class="post-footer animate-on-scroll">
+        <footer class="post-footer">
             <div class="post-author">
                 <div class="author-info">
                     <p class="author-name">{{ site.author.name }}</p>

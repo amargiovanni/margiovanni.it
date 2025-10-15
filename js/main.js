@@ -5,7 +5,6 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initScrollAnimations();
   initSmoothScroll();
   initNavigation();
   initAnimatedBackground();
@@ -28,48 +27,6 @@ function initTheme() {
   mediaQuery.addEventListener('change', (e) => {
     const newTheme = e.matches ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
-  });
-}
-
-// =======================
-// Scroll Animations
-// =======================
-
-function initScrollAnimations() {
-  // Check if Intersection Observer is supported
-  if (!('IntersectionObserver' in window)) {
-    // Fallback for browsers that don't support Intersection Observer
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      el.classList.add('animate-in');
-    });
-    return;
-  }
-
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '50px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate-in');
-        // Optional: unobserve after animation to improve performance
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // Observe all elements with animate-on-scroll class
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-
-    // Immediately animate elements that are already in viewport on page load
-    const rect = el.getBoundingClientRect();
-    const isInViewport = rect.top < window.innerHeight && rect.bottom >= 0;
-    if (isInViewport) {
-      el.classList.add('animate-in');
-    }
   });
 }
 
