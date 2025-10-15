@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "From Business Vision to Execution: A Product Manager's Practical Journey"
+subtitle: "The uncomfortable gap between inspiring PowerPoint visions and the Monday morning question of what we actually do"
 date: 2025-03-05
 categories: product-management strategy execution
 ---

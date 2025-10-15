@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Strategies for Creating Simple and Intuitive User Experiences"
+subtitle: "My mother taught me that booking a doctor's appointment shouldn't feel like launching a rocket to the Moon"
 date: 2025-01-29
 categories: ux design simplicity
 ---

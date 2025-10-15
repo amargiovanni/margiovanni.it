@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Clean Code: Why It's Fundamental for Lasting Digital Products"
+subtitle: "The day I couldn't understand my own code from six months earlier changed everything I thought I knew about writing software"
 date: 2025-02-05
 categories: development clean-code best-practices
 ---

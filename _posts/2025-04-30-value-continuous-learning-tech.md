@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Value of Continuous Learning in Tech"
+subtitle: "The day a junior developer showed me something I didn't know was the day I realized I'd stopped growing"
 date: 2025-04-30
 categories: learning continuous-education professional-development
 ---

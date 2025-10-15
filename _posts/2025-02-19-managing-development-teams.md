@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Managing Development Teams: Tips and Mistakes to Avoid"
+subtitle: "The humbling discovery that leading people is nothing like writing code, and the mistakes that taught me everything"
 date: 2025-02-19
 categories: team-management leadership engineering
 ---

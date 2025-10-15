@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How to Choose the Right Technologies for a New Digital Project"
+subtitle: "That time we drowned in microservices complexity taught me that the 'best' technology is rarely the right one"
 date: 2025-03-26
 categories: technology-selection architecture decision-making
 ---

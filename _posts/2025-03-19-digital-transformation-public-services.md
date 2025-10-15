@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Digital Transformation in Public Services and the Impact on People"
+subtitle: "When digital transformation excludes my 73-year-old aunt from renewing her ID card, we've failed at something fundamental"
 date: 2025-03-19
 categories: digital-transformation public-sector civic-tech
 ---

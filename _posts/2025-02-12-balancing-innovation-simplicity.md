@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How to Balance Innovation and Simplicity in Tech Projects"
+subtitle: "Walking the tightrope between the excitement of new technology and the wisdom of keeping things beautifully simple"
 date: 2025-02-12
 categories: innovation product-design balance
 ---

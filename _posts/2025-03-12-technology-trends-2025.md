@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Technology Trends to Watch in 2025"
+subtitle: "Beyond the hype and headlines, the quiet technologies that are actually changing how we build and work"
 date: 2025-03-12
 categories: technology trends future innovation
 ---

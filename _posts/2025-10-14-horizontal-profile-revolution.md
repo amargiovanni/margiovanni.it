@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Horizontal Profile Revolution: Navigating Uncertainty in a Tech World that Rewards Versatility"
+subtitle: "The professional uncertainty of being good at many things while colleagues mastered one, and why that stopped feeling like a weakness"
 date: 2025-10-14
 categories: team-culture motivation creativity innovation
 ---

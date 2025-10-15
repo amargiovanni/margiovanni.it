@@ -20,7 +20,13 @@
       "Bash(done)",
       "Bash(git mv:*)",
       "Bash(open http://localhost:4000)",
-      "Bash(rougify help:*)"
+      "Bash(rougify help:*)",
+      "Bash(for file in /Users/andreamargiovanni/dev/margiovanni.it/_posts/*.md)",
+      "Bash(head:*)",
+      "Bash(for file in *.md)",
+      "Bash(do if ! grep -q \"^subtitle:\" \"$file\")",
+      "Bash(then echo \"$file\")",
+      "Bash(fi)"
     ],
     "deny": []
   }

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Importance of Human-Centered Design in Technological Development"
+subtitle: "That moment when someone asks about the person who will actually use what we're building, and the room goes silent"
 date: 2025-01-22
 categories: design ux human-centered
 ---

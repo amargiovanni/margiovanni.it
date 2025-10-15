@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Digital Product Launch Checklist: What Not to Forget"
+subtitle: "It's 2 AM before launch day and you're wondering if you remembered everything that matters"
 date: 2025-04-09
 categories: product-launch checklist deployment
 ---

@@ -1,0 +1,69 @@
+{% assign maxRelated = 4 %}
+{% assign minCommonCategories = 1 %}
+{% assign maxRelatedCounter = 0 %}
+
+{% comment %}
+  This include finds related posts based on:
+  1. Shared categories (weighted most heavily)
+  2. Recent posts if not enough category matches
+{% endcomment %}
+
+{% assign related_posts = "" | split: "" %}
+
+{% comment %} First pass: Find posts with common categories {% endcomment %}
+{% for post in site.posts %}
+  {% if post.url != page.url %}
+    {% assign commonCategories = 0 %}
+    {% for category in post.categories %}
+      {% if page.categories contains category %}
+        {% assign commonCategories = commonCategories | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if commonCategories >= minCommonCategories %}
+      {% assign related_posts = related_posts | push: post %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} If we don't have enough related posts, add recent ones {% endcomment %}
+{% if related_posts.size < maxRelated %}
+  {% for post in site.posts %}
+    {% if post.url != page.url %}
+      {% unless related_posts contains post %}
+        {% assign related_posts = related_posts | push: post %}
+      {% endunless %}
+    {% endif %}
+    {% if related_posts.size >= maxRelated %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if related_posts.size > 0 %}
+<aside class="related-posts">
+  <h2 class="related-posts-title">You might also enjoy</h2>
+  <div class="related-posts-grid">
+    {% for post in related_posts limit:maxRelated %}
+    <article class="related-post-card">
+      <time class="related-post-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%B %d, %Y" }}
+      </time>
+      {% if post.categories %}
+      <div class="related-post-categories">
+        {% for category in post.categories %}
+        <span class="related-post-category">{{ category }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <h3 class="related-post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      {% if post.subtitle %}
+      <p class="related-post-subtitle">{{ post.subtitle }}</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</aside>
+{% endif %}

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Common Product Development Mistakes and How to Avoid Them"
+subtitle: "Every failure taught me something, and the patterns are so clear now I wish I'd seen them earlier"
 date: 2025-04-16
 categories: product-development mistakes lessons-learned
 ---

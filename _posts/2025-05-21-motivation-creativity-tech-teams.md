@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How to Maintain Motivation and Creativity in Tech Teams"
+subtitle: "That Monday morning when I looked around the table and saw the spark had gone from everyone's eyes"
 date: 2025-05-21
 categories: team-culture motivation creativity innovation
 ---

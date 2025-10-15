@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Benefits of Collaboration Between Designers and Developers"
+subtitle: "When designers and developers stopped throwing work over the wall and started building together, everything changed"
 date: 2025-04-02
 categories: collaboration design development teamwork
 ---

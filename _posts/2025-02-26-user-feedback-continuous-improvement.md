@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Role of User Feedback in Continuous Product Improvement"
+subtitle: "We built something technically perfect that nobody used, until we finally learned to listen"
 date: 2025-02-26
 categories: user-feedback product-development iteration
 ---

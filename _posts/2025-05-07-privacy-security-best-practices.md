@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Privacy and Security: Best Practices in Software Development"
+subtitle: "Finding thousands of plain-text passwords in the database was the moment everything about security became personal"
 date: 2025-05-07
 categories: security privacy best-practices development
 ---

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "How to 'Listen' to Data to Improve Digital Products"
+subtitle: "Having all the data in the world means nothing until you learn to listen to what it's actually saying"
 date: 2025-04-23
 categories: data-analysis product-analytics metrics
 ---

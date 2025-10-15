@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Importance of Usability Testing in Development"
+subtitle: "Five users got stuck in the same place within thirty minutes, revealing what months of development had hidden from us"
 date: 2025-05-14
 categories: usability-testing ux user-research development
 ---
