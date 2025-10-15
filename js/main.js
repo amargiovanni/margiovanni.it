@@ -5,7 +5,6 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
-  initLoadingScreen();
   initScrollAnimations();
   initSmoothScroll();
   initNavigation();
@@ -29,25 +28,6 @@ function initTheme() {
   mediaQuery.addEventListener('change', (e) => {
     const newTheme = e.matches ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', newTheme);
-  });
-}
-
-// =======================
-// Loading Screen
-// =======================
-
-function initLoadingScreen() {
-  const loadingScreen = document.getElementById('loadingScreen');
-
-  // Hide loading screen after content is loaded
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loadingScreen.classList.add('hidden');
-      // Remove from DOM after transition
-      setTimeout(() => {
-        loadingScreen.remove();
-      }, 500);
-    }, 500);
   });
 }
 
