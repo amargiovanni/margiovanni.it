@@ -452,6 +452,66 @@ body {
   letter-spacing: -0.02em;
 }
 
+/* About Profile Image */
+.about-profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.profile-image-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.4);
+  transition: all var(--transition-base);
+  border: 4px solid transparent;
+  background:
+    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
+    linear-gradient(135deg, var(--color-purple), var(--color-pink), var(--color-cyan)) border-box;
+}
+
+.profile-image-wrapper:hover .profile-image {
+  transform: scale(1.05);
+  box-shadow: 0 25px 80px rgba(168, 85, 247, 0.6);
+}
+
+.profile-ring {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-purple), var(--color-pink), var(--color-cyan));
+  opacity: 0.15;
+  z-index: 1;
+  animation: pulse-ring 3s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.25;
+  }
+}
+
 .about-text {
   display: flex;
   flex-direction: column;
@@ -474,6 +534,19 @@ body {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(168, 85, 247, 0.3);
   transform: translateY(-3px);
+}
+
+.about-text h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* =======================
@@ -617,6 +690,18 @@ body {
   .contact-links {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+  }
+
+  .profile-image-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-ring {
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
   }
 
   .gradient-blob {
