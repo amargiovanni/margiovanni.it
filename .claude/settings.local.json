@@ -13,7 +13,11 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(md5:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(while read f)",
+      "Bash(do head -n 5 \"$f\")",
+      "Bash(echo:*)",
+      "Bash(done)"
     ],
     "deny": []
   }
