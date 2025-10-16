@@ -191,3 +191,5 @@ Prima di committare un nuovo post, verifica:
 - [ ] L'excerpt è descrittivo e accattivante
 - [ ] Il nome del file segue la convenzione corretta
 - [ ] Il contenuto riflette sensibilità e autenticità
+
+Non fare commit né push, in modo che possa controllare il post di persona e provvedere manualmente a commit e push.
