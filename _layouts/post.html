@@ -22,7 +22,7 @@ layout: default
             <div class="post-meta">
                 <br />
                 {% capture reading_time %}{{ content | reading_time }}{% endcapture %}
-                <span class="reading-time">📖 Reading time: {{ reading_time }} {% if reading_time == '1' %}minute{% else %}minutes{% endif %}</span>
+                <span class="reading-time">Reading time: {{ reading_time }} {% if reading_time == '1' %}minute{% else %}minutes{% endif %}</span>
             </div>
         </header>
 
