@@ -6,7 +6,7 @@ date: 2025-04-23
 categories: data-analysis product-analytics metrics
 ---
 
-> We have all the data in the world, but we don't know what it means.
+"We have all the data in the world, but we don't know what it means."
 
 A frustrated CEO told me this after implementing analytics on the entire product. Beautiful dashboards. Metrics everywhere. But zero action, zero insights, zero improvements.
 
