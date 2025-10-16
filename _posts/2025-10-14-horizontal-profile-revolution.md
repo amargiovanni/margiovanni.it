@@ -66,18 +66,23 @@ The horizontal profile solves a fundamental problem of modern business organizat
 If you recognize yourself in this description, if you too have spent sleepless nights wondering how to introduce yourself professionally, here's what I've learned:
 
 **1. Embrace Complexity**
+
 Don't try to oversimplify your role. Complexity is your value, not a problem to hide.
 
 **2. Build a Coherent Narrative**
+
 Even if your skills are diverse, find the common thread. In my case: "innovative end-to-end technological solutions".
 
 **3. Document Your Impact**
+
 Collect concrete examples of projects where your versatility made a difference. These are the stories that convince.
 
 **4. Seek Growing Companies**
+
 Mature startups and scale-ups are the natural environment for profiles like ours. They're looking for exactly the versatility we offer.
 
 **5. Transform Anxiety into Curiosity**
+
 Instead of seeing uncertainty as weakness, present it as adaptability and openness to innovation.
 
 ## The Future Belongs to the Multidisciplinary
