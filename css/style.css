@@ -128,8 +128,6 @@ body {
   font-size: 18px;
   overflow-x: hidden;
   position: relative;
-  /* Assicura che il body si estenda per tutto lo schermo su iOS */
-  min-height: 100vh;
 }
 
 /* Accessibility: Respect reduced motion preference */
@@ -148,13 +146,10 @@ body {
 
 .animated-bg {
   position: fixed;
-  /* Usa valori negativi grandi per assicurare che lo sfondo copra tutto, incluse le safe area */
-  top: -100px;
-  left: -100px;
-  right: -100px;
-  bottom: -100px;
-  width: calc(100% + 200px);
-  height: calc(100% + 200px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   overflow: hidden;
   background: var(--animated-bg);
