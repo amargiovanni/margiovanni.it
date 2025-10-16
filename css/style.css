@@ -11,7 +11,7 @@
   --text-primary: #ffffff;
   --text-secondary: #e0e0ff;
   --text-tertiary: #a0a0d0;
-  --nav-bg: rgba(15, 15, 35, 0.8);
+  --nav-bg: rgba(15, 15, 35, 0.6);
   --animated-bg: linear-gradient(180deg, #0f0f23 0%, #1a1a3e 100%);
   --blob-opacity: 0.6;
 
@@ -64,7 +64,7 @@
     --text-primary: #1a1a2e;
     --text-secondary: #2d3748;
     --text-tertiary: #4a5568;
-    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-bg: rgba(255, 255, 255, 0.7);
     --animated-bg: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
     --blob-opacity: 0.25;
 
@@ -82,7 +82,7 @@
   --text-primary: #1a1a2e;
   --text-secondary: #2d3748;
   --text-tertiary: #4a5568;
-  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-bg: rgba(255, 255, 255, 0.7);
   --animated-bg: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
   --blob-opacity: 0.25;
 
@@ -99,7 +99,7 @@
   --text-primary: #ffffff;
   --text-secondary: #e0e0ff;
   --text-tertiary: #a0a0d0;
-  --nav-bg: rgba(15, 15, 35, 0.8);
+  --nav-bg: rgba(15, 15, 35, 0.6);
   --animated-bg: linear-gradient(180deg, #0f0f23 0%, #1a1a3e 100%);
   --blob-opacity: 0.6;
 
