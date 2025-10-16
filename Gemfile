@@ -10,6 +10,7 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-paginate", "~> 1.1"
   gem "jekyll-sitemap", "~> 1.4"
+  gem "liquid_reading_time"
 end
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do

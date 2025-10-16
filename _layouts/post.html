@@ -19,6 +19,11 @@ layout: default
             {% if page.subtitle %}
             <p class="post-subtitle">{{ page.subtitle }}</p>
             {% endif %}
+            <div class="post-meta">
+                <br />
+                {% capture reading_time %}{{ content | reading_time }}{% endcapture %}
+                <span class="reading-time">📖 Reading time: {{ reading_time }} {% if reading_time == '1' %}minute{% else %}minutes{% endif %}</span>
+            </div>
         </header>
 
         <div class="post-content">
