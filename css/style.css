@@ -118,8 +118,6 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Estende il contenuto sotto le barre di iOS */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 body {
@@ -130,9 +128,8 @@ body {
   font-size: 18px;
   overflow-x: hidden;
   position: relative;
-  /* Assicura che il body si estenda per tutto lo schermo */
+  /* Assicura che il body si estenda per tutto lo schermo su iOS */
   min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 /* Accessibility: Respect reduced motion preference */
@@ -151,13 +148,13 @@ body {
 
 .animated-bg {
   position: fixed;
-  /* Estende lo sfondo oltre i bordi dello schermo per coprire le safe area di iOS */
-  top: calc(-1 * env(safe-area-inset-top, 0px));
-  left: calc(-1 * env(safe-area-inset-left, 0px));
-  right: calc(-1 * env(safe-area-inset-right, 0px));
-  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
-  width: calc(100% + env(safe-area-inset-left, 0px) + env(safe-area-inset-right, 0px));
-  height: calc(100% + env(safe-area-inset-top, 0px) + env(safe-area-inset-bottom, 0px));
+  /* Usa valori negativi grandi per assicurare che lo sfondo copra tutto, incluse le safe area */
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  width: calc(100% + 200px);
+  height: calc(100% + 200px);
   z-index: -1;
   overflow: hidden;
   background: var(--animated-bg);
