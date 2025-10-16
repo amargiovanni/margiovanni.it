@@ -4,7 +4,15 @@
       "Bash(curl -o /Users/andreamargiovanni/dev/margiovanni.it/js/simple-jekyll-search.min.js https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js)",
       "Bash(git revert:*)",
       "Bash(git push)",
-      "Bash(bundle install:*)"
+      "Bash(bundle install:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix iOS Safari background extending under translucent address bar\n\n- Add viewport-fit=cover meta tag to allow content in safe areas\n- Add iOS-specific meta tags for better mobile experience\n- Extend animated background using env(safe-area-inset-*) variables\n- Ensure body fills available screen height on iOS Safari\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nImprove iOS Safari background fix with simpler approach\n\n- Remove complex safe-area calculations\n- Use larger negative margins to ensure background coverage\n- Simplify body and html styling\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(bundle exec jekyll build:*)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(kill:*)",
+      "Bash(git restore:*)"
     ],
     "deny": [],
     "ask": []

@@ -66,3 +66,20 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - liquid_reading_time
+  - jekyll_picture_tag
+
+# Picture Tag Configuration
+picture:
+  source: "assets/img"
+  output: "assets/generated"
+  markup: "picture"
+  presets:
+    default:
+      formats: [webp, original]
+      widths: [400, 600, 800, 1000]
+      sizes:
+        mobile: "100vw"
+        desktop: "800px"
+      attributes:
+        picture: "class='responsive-image'"
+        img: "loading='lazy'"
