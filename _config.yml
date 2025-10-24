@@ -45,6 +45,7 @@ defaults:
 include:
   - _headers
   - robots.txt
+  - llms.txt
 
 # Exclude from processing
 exclude:
